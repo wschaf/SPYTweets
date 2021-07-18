@@ -14,16 +14,3 @@ import requests
 #   config contains API authentication strings.
 from config import *
 
-TDQuoteEndpoint = r"https://api.tdameritrade.com/v1/marketdata/{}/quotes".format("SPY")
-
-TDQuotePayload = { "apikey": TDapikey}
-
-
-
-print()
-print()
-test = requests.get(url = TDQuoteEndpoint, params = TDQuotePayload)
-data = test.json()
-print("The current price of {}, {}, is: ${}".format(data['SPY']['symbol'], data['SPY']['description'], data['SPY']['mark']))
-print()
-print()
